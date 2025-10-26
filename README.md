@@ -28,6 +28,15 @@ pipeline {
     }  
 }
 
-5. Pushed all files to GitHub repo above
-
-6. Jenkins > New Pipeline job > pointed to this repo > Build Now → all stages green
+5. Pushed all files to GitHub repo (https://github.com/MarcoFasa17/simple-pipeline-.git)
+open docker desktop
+docker pull python:3.11-slim
+docker start jenkins
+http://localhost:8080
+New Item → name: simple-pipeline → Pipeline → OK
+Definition: Pipeline script from SCM
+SCM: Git
+Repository URL: https://github.com/MarcoFasa17/simple-pipeline-.git
+Branches to build: */main
+Script-Path: Jenkinsfile
+→ Save
